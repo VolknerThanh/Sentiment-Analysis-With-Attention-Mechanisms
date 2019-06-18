@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='func.css') }}">
+</head>
+<body>
+
+    <h1 class="title _title">sentiment analysis in {{ name }}</h1>
+
+    <div class="container">
+        <form action="" method="post" role="form">
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-md-6 offset-md-3">Type some text to analysis:</label>
+
+                    <input type="text"
+                           class="col-md-6 offset-md-3 _input form-control DisplayFlex"
+                           id="input_value"
+                           name="input_value"
+                           placeholder="type at here ..."
+                    />
+
+                    <button type="submit" class="offset-md-3 btn btn-info DisplayFlex">Analyze</button>
+                </div>
+            </div>
+         </form>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <span class="offset-md-3"><b>Result: </b> {{ res }} </span>
+        </div>
+
+        <button class="btn btn-danger exit-btn"
+                onclick="location.href='index.html'"
+        ><< Back to home</button>
+
+    </div>
+</body>
+</html>

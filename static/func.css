@@ -1,0 +1,17 @@
+._title{
+    margin-top: 20px;
+}
+
+.form-wrapper{
+    width: 100%;
+}
+
+._input{
+    margin-bottom: 1em;
+}
+
+.exit-btn{
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+}
