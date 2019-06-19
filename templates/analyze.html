@@ -15,7 +15,7 @@
         <form action="" method="post" role="form">
             <div class="form-group">
                 <div class="row">
-                    <label class="col-md-6 offset-md-3">Type some text to analyze:</label>
+                    <label class="col-md-6 offset-md-3">Type some text to analysis:</label>
 
                     <input type="text"
                            class="col-md-6 offset-md-3 _input form-control DisplayFlex"
@@ -32,7 +32,21 @@
         <hr>
         <br>
         <div class="row">
-            <span class="offset-md-3"><b>Result: </b> {{ res }} </span>
+            <span class="offset-md-3">
+                <b>Input: </b><i>"{{ input_content }}"</i>
+            </span>
+        </div>
+        <div class="row">
+            <span class="offset-md-3">
+                <b>Result: </b>
+                {% if res == "positive" %}
+                    <span class="positive">{{ res }}</span>
+                {% elif res == 'negative' %}
+                    <span class="negative">{{ res }}</span>
+                {% else %}
+                    <span></span>
+                {% endif %}
+            </span>
         </div>
 
         <button class="btn btn-danger exit-btn"
