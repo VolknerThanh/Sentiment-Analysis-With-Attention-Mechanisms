@@ -16,16 +16,18 @@
     bottom: 5%;
 }
 
+.polarity{
+    font-size: 120%;
+    padding: 5px 20px;
+    border-radius: 12px;
+}
+
 .positive{
-    background-color: #4aaf36;
-    padding: 5px;
-    font-size: 80%;
+    background-color: #63b553;
     color: #365b27;
 }
 
 .negative{
-    background-color: #f21e07;
+    background-color: #ea5c4d;
     color: #b50e27;
-    font-size: 80%;
-    padding: 5px;
 }

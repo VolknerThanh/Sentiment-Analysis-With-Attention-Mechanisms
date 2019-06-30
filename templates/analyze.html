@@ -22,27 +22,45 @@
                            id="input_value"
                            name="input_value"
                            placeholder="type at here ..."
+                           required
                     />
 
-                    <button type="submit" class="offset-md-3 btn btn-info DisplayFlex">Analyze</button>
+                    <button type="submit"
+                            id="btn-submit"
+                            class="offset-md-3 btn btn-info DisplayFlex"
+                            onclick="this.form.submit(); this.disabled=true; this.value='Sending…'; ">
+                        Analyze
+                    </button>
                 </div>
             </div>
          </form>
         <br>
         <hr>
         <br>
+        {% if res %}
+            <script>
+                var btn = document.getElementById('btn-submit');
+                btn.disable = False;
+                btn.innerHTML = "Analyze";
+            </script>
+        {% endif %}
         <div class="row">
             <span class="offset-md-3">
-                <b>Input: </b><i>"{{ input_content }}"</i>
+                {% if input_content %}
+                    <b>Input: </b><i>"{{ input_content }}"</i>
+                {% else %}
+                    <br>
+                {% endif %}
             </span>
         </div>
+        <br>
         <div class="row">
             <span class="offset-md-3">
                 <b>Result: </b>
                 {% if res == "positive" %}
-                    <span class="positive">{{ res }}</span>
+                    <span class="polarity positive">{{ res }}</span>
                 {% elif res == 'negative' %}
-                    <span class="negative">{{ res }}</span>
+                    <span class="polarity negative">{{ res }}</span>
                 {% else %}
                     <span></span>
                 {% endif %}
@@ -50,7 +68,7 @@
         </div>
 
         <button class="btn btn-danger exit-btn"
-                onclick="location.href='index.html'"
+                onclick="location.href='{{ url_for('index') }}'"
         ><< Back to home</button>
 
     </div>
